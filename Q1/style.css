@@ -19,20 +19,74 @@ form {
 input {
   padding: 1em 0.5em;
   border-radius: 5px;
-  border: 1px solid rgb(195, 195, 195);
+  border: 1px solid #c3c3c3;
   outline: none;
 }
 button[type="submit"] {
   padding: 1em 0.5em;
   border-radius: 5px;
   border: none;
-  color: rgb(255, 255, 255);
-  background-color: rgb(58 147 83);
+  color: #ffffff;
+  background-color: #3a9353;
   font-family: inherit;
   cursor: pointer;
 }
 button[type="submit"]:hover {
   background-color: transparent;
-  border: 2px solid rgb(58 147 83);
-  color: black;
+  border: 2px solid #3a9353;
+  color: #000000;
+}
+#bords{
+    display: flex;
+    flex-direction: column;
+    gap: 2em 1em;
+    max-width: 24em;
+    margin: 2em auto;
+}
+.bord{
+    
+    padding: 1em;
+    border-radius: 5px;
+}
+.bord h3{
+    text-align: center;
+    margin-bottom: 1em;
+}
+#task{
+    background-color: #b0dcef;
+}
+.task-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+#doing{
+    background-color: #efefb0;
+}
+#done{
+    background-color: #02ef04;
+}
+.user-task{
+    display: flex;
+    flex-direction: column;
+    gap: 0.75em;
+    background-color: #fff;
+    padding: 1em;
+}
+.action-buttons{
+    display: flex;
+    justify-content: space-between;
+}
+.action-buttons button{
+    width: 3em;
+    height: 3em;
+    padding: 0.5em;
+    border: none;
+    border-radius: 5px;
+    background-color: #b0dcef;
+    cursor: pointer;
+}
+.action-buttons button:hover{
+    background-color: #4a88a3;
+    color: white;
 }
