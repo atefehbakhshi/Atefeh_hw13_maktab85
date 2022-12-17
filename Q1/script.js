@@ -38,7 +38,33 @@ function gatherDate(e) {
     status: "task",
   };
 }
-
+// Read
+function readList(usertask) {
+  usertask.forEach((item) => {
+    const html = `
+    <div class="user-task">
+        <h4>${item.title}</h4>
+        <p class="start-date">${item.start}</p>
+        <p class="end-date">${item.end}</p>
+        <div class="action-buttons">
+           <button>
+                <span class="material-symbols-outlined"> remove </span>
+            </button>
+            <button>
+                <span class="material-symbols-outlined"> info </span>
+            </button>
+           <button>
+                <span class="material-symbols-outlined"> done </span>
+           </button>
+        </div>
+    </div>
+`;
+    if (item.status === "task") {
+      tasksContainer.insertAdjacentHTML("beforeend", html);
+    }
+  });
+}
+readList(tasks);
 
 // Submit form
 form.addEventListener("submit", createList);
