@@ -2,7 +2,12 @@ import readList from "./read.js";
 import createList from "./create.js";
 import { taskBord, doingBord, doneBord } from "./transform.js";
 
+// Form
 const form = document.querySelector("#task-form");
+const inputTitle=document.querySelector('#title')
+const inputDescription=document.querySelector('#description')
+const inputEndDate=document.querySelector('#endDate')
+// Bords
 const tasksContainer = document.querySelector("#tasks-container");
 const doingTasksContainer = document.querySelector("#doing-tasks-container");
 const doneTasksContainer = document.querySelector("#done-tasks-container");
@@ -10,6 +15,9 @@ let tasks = [];
 
 export {
   form,
+  inputTitle,
+  inputDescription,
+  inputEndDate,
   tasksContainer,
   doingTasksContainer,
   doneTasksContainer,

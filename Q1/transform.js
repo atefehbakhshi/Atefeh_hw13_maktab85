@@ -1,4 +1,4 @@
-import { tasks } from "./script.js";
+import { inputTitle, inputDescription, inputEndDate, tasks } from "./script.js";
 import readList from "./read.js";
 
 // Task
@@ -14,6 +14,9 @@ function taskBord(e) {
   }
   if (e.target.classList.contains("remove")) {
     tasks.splice(tasks.indexOf(selectedTask), 1);
+    inputTitle.value = selectedTask.title;
+    inputDescription.value = selectedTask.description;
+    inputEndDate.value = selectedTask.end;
     readList(tasks);
     localStorage.setItem("userTasks", JSON.stringify(tasks));
   }
