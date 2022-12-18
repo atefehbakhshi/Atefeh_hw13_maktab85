@@ -1,4 +1,4 @@
-import { tasks } from "./domElements.js";
+import { tasks } from "./script.js";
 import readList from "./read.js";
 
 // Task
@@ -21,6 +21,7 @@ function taskBord(e) {
     taskDescription.classList.toggle("display-none");
   }
 }
+
 // Doing
 function doingBord(e) {
   const taskId = e.composedPath()[3].id;
@@ -41,6 +42,7 @@ function doingBord(e) {
     taskDescription.classList.toggle("display-none");
   }
 }
+
 // Done
 function doneBord(e) {
   const taskId = e.composedPath()[3].id;

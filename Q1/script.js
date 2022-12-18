@@ -1,14 +1,29 @@
-"use strict";
-import {
+import readList from "./read.js";
+import createList from "./create.js";
+import { taskBord, doingBord, doneBord } from "./transform.js";
+
+const form = document.querySelector("#task-form");
+const tasksContainer = document.querySelector("#tasks-container");
+const doingTasksContainer = document.querySelector("#doing-tasks-container");
+const doneTasksContainer = document.querySelector("#done-tasks-container");
+let tasks = [];
+
+export {
+  form,
   tasksContainer,
   doingTasksContainer,
   doneTasksContainer,
   tasks,
-  form,
-} from "./domElements.js";
-import readList from "./read.js";
-import createList from "./create.js";
-import { taskBord, doingBord, doneBord } from "./transform.js";
+};
+
+// Saved Tasks
+function getTasksFromLocalStorage() {
+  const savedTasks = JSON.parse(localStorage.getItem("userTasks"));
+  if (savedTasks) {
+    tasks = savedTasks;
+  }
+}
+getTasksFromLocalStorage();
 
 // Read
 readList(tasks);
@@ -16,7 +31,7 @@ readList(tasks);
 // Create
 form.addEventListener("submit", createList);
 
-// Edit
+// Transform
 // 1. Task
 tasksContainer.addEventListener("click", (e) => taskBord(e));
 // 2. Doing

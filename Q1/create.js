@@ -1,4 +1,4 @@
-import { tasks, tasksContainer } from "./domElements.js";
+import { tasks, tasksContainer } from "./script.js";
 import readList from "./read.js";
 
 export default function createList(e) {
