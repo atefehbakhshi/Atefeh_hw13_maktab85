@@ -1,28 +1,14 @@
+import {
+  form,
+  tasksContainer,
+  doingTasksContainer,
+  doneTasksContainer,
+} from "./variables.js";
 import readList from "./read.js";
 import createList from "./create.js";
 import { taskBord, doingBord, doneBord } from "./transform.js";
 
-// Form
-const form = document.querySelector("#task-form");
-const inputTitle=document.querySelector('#title')
-const inputDescription=document.querySelector('#description')
-const inputEndDate=document.querySelector('#endDate')
-// Bords
-const tasksContainer = document.querySelector("#tasks-container");
-const doingTasksContainer = document.querySelector("#doing-tasks-container");
-const doneTasksContainer = document.querySelector("#done-tasks-container");
 let tasks = [];
-
-export {
-  form,
-  inputTitle,
-  inputDescription,
-  inputEndDate,
-  tasksContainer,
-  doingTasksContainer,
-  doneTasksContainer,
-  tasks,
-};
 
 // Saved Tasks
 function getTasksFromLocalStorage() {
@@ -37,12 +23,12 @@ getTasksFromLocalStorage();
 readList(tasks);
 
 // Create
-form.addEventListener("submit", createList);
+form.addEventListener("submit", (e) => createList(e, tasks));
 
 // Transform
 // 1. Task
-tasksContainer.addEventListener("click", (e) => taskBord(e));
+tasksContainer.addEventListener("click", (e) => taskBord(e, tasks));
 // 2. Doing
-doingTasksContainer.addEventListener("click", (e) => doingBord(e));
+doingTasksContainer.addEventListener("click", (e) => doingBord(e, tasks));
 // 3. Done
-doneTasksContainer.addEventListener("click", (e) => doneBord(e));
+doneTasksContainer.addEventListener("click", (e) => doneBord(e, tasks));

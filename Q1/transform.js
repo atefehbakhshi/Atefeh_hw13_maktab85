@@ -1,8 +1,8 @@
-import { inputTitle, inputDescription, inputEndDate, tasks } from "./script.js";
+import { inputTitle, inputDescription, inputEndDate } from "./variables.js";
 import readList from "./read.js";
 
 // Task
-function taskBord(e) {
+function taskBord(e,tasks) {
   const taskId = e.composedPath()[3].id;
   const taskDescription = e.composedPath()[2].previousElementSibling;
   const selectedTask = tasks.find((item) => item.id === Number(taskId));
@@ -26,7 +26,7 @@ function taskBord(e) {
 }
 
 // Doing
-function doingBord(e) {
+function doingBord(e,tasks) {
   const taskId = e.composedPath()[3].id;
   const taskDescription = e.composedPath()[2].previousElementSibling;
   const selectedTask = tasks.find((item) => item.id === Number(taskId));
@@ -47,7 +47,7 @@ function doingBord(e) {
 }
 
 // Done
-function doneBord(e) {
+function doneBord(e,tasks) {
   const taskId = e.composedPath()[3].id;
   const taskDescription = e.composedPath()[2].previousElementSibling;
   const selectedTask = tasks.find((item) => item.id === Number(taskId));

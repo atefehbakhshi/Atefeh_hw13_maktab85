@@ -2,7 +2,7 @@ import {
   tasksContainer,
   doingTasksContainer,
   doneTasksContainer,
-} from "./script.js";
+} from "./variables.js";
 
 export default function readList(usertask) {
   tasksContainer.innerHTML = "";

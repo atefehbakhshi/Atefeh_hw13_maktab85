@@ -1,7 +1,7 @@
-import { tasks, tasksContainer } from "./script.js";
+import { tasksContainer } from "./variables.js";
 import readList from "./read.js";
 
-export default function createList(e) {
+export default function createList(e,tasks) {
   e.preventDefault();
   const newList = gatherDate(e);
   tasks.push(newList);
